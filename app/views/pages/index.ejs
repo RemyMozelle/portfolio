@@ -1,10 +1,27 @@
+<%- contentFor('header') %>
+<!-- MENU -->
+<div id="acceuil"></div>
+<%- include ../includes/header/inc_header.ejs %>
+
 <%- contentFor('content') %>
-<h1>je Suis la page index.ejs</h1>
-
-<div class="container">
-  <p>je suis le container</p>
+<!-- PORTFOLIO -->
+<div id="portfolio"></div>
+<div class="container-fluid portfolio">
+  <div class="container">
+    <%- include ../includes/portfolio/inc_portfolio.ejs %>
+  </div>
 </div>
-
-<div class="container-fluid">
-  <p>je suis le container-fluid</p>
+<!-- SAVOIR_FAIRE -->
+<div id="savoir_faire"></div>
+<div class="container-fluid savoir_faire">
+  <div class="container">
+    <%- include ../includes/savoir_faire/inc_savoir_faire.ejs %>
+  </div>
+</div>
+<!-- CONTACT -->
+<div id="contact"></div>
+<div class="container-fluid contact">
+  <div class="container">
+    <%- include ../includes/contact/inc_contact.ejs %>
+  </div>
 </div>

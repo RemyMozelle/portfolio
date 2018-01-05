@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,44 @@
   <title>Voici le layout</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="./app.style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
 </head>
-<body>
-  <h2>je suis bien le layout</h2>
-  
-  <%- defineContent('content') %>
 
+<body>
+  <header>
+    <%- defineContent('header') %>
+  </header>
+  <%- defineContent('content') %>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="a-propos col-md-6">
+          <h4 class="vert">À_propos</h4>
+          <p class="blanc">
+            Je suis
+            <span class="vert">Rémy Mozelle</span>, apprenti développeur web à la Réunion. Je suis actuellement en formation intensive à
+            <span class="orange">Simplon</span>
+            <br> Passioné par les nouvelles technologie.Je souhaite faire du web mon métier</p>
+          </p>
+        </div>
+        <div class="me-suivre col-md-3">
+          <h4 class="vert"><span><<span>Me_suivre</span>></span></h4>
+          <div class="rs">
+            <figure><a href=""><img src="img/contact/rs-git.png" alt="github de Rémy"></a></figure>
+            <figure><a href=""><img src="img/contact/rs-twitter.png" alt="twitter de Rémy"></a></figure>
+            <figure><a href=""><img src="img/contact/rs-lin.png" alt="linkdin de Rémy"></a></figure>
+          </div>
+        </div>
+        <div class="cv col-md-3">
+          <div class="vert"><span><<span>Mon_cv</span>></span></div>
+          <a href="cv/Mozellerémycv.pdf" class="btn bvert"><span class="glyphicon glyphicon-save" style="padding-right:5px;color:black;">Télécharger</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
   <script src="./app.bundle.js"></script>
 </body>
+
 </html>

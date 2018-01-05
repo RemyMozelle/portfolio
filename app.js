@@ -8,8 +8,9 @@ app.set('views', 'app/views');
 app.set('layout', 'layouts/layout');
 
 app.use(expressLayout);
-app.use(express.static('node_modules/bootstrap/dist'));
-app.use(express.static('assets'));
+app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
+app.use(express.static(__dirname + '/assets'));
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
   res.render('pages/index.ejs');
