@@ -1,9 +1,7 @@
 const express = require('express');
 const route = express.Router();
-const controllerSkill = require('../../app/controllers/controllerSkill');
+const appController = require('../../app/controllers/AppController');
 
-
-route.get('/', controllerSkill.showSkills);
 
 
 module.exports = route;
