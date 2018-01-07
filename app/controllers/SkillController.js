@@ -4,7 +4,7 @@ class SkillController {
 
   showSkills(){
     skill.getSkills().then(sk => {
-
+      res.send(sk)
     })
   }
 }
