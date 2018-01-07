@@ -11,10 +11,8 @@ app.use(expressLayout);
 app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
 app.use(express.static(__dirname + '/assets'));
 app.use(express.static(__dirname + '/public'));
+app.use(require('./config/routes/route.js'));
 
-app.get('/', (req, res) => {
-  res.render('pages/index.ejs');
-})
 
 app.listen(3000, () => {
   console.log('vous être connectez port 3000')
