@@ -3,7 +3,7 @@ class Menu {
     this.db = require('../../config/database/Db');
   }
 
-  getMenu(){
+  getMenu() {
     return new Promise((resolve, reject) => {
       this.db.getPool().query('SELECT * FROM menus', (error, results, fields) => {
         error ? reject(error) : resolve(results)
