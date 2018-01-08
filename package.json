@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"nodemon app.js\" \"webpack --watch --config webpack.dev.js\"",
-    "prod": "concurrently \"node app.js\" \"webpack --config webpack.prod.js\""
+    "prod": "concurrently \"node app.js\" \"webpack --config webpack.prod.js\"",
+    "start": "concurrently \"node app.js\" \"webpack --config webpack.prod.js\""
   },
   "author": "",
   "license": "ISC",
