@@ -48,6 +48,20 @@ class AppController {
 
     res.redirect('/');
   }
+
+  getCv(req, res){
+
+    const options = {
+      root: './cv',
+      headers: {
+        'x-sent': true
+      }
+    };
+
+    res.sendFile(req.params.cv, options, (err) => {
+      err ? console.log(err) : console.log('bien télécharger');
+    });
+  }
 }
 
 
