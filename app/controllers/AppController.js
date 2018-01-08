@@ -1,6 +1,8 @@
 const Menu = require('../models/Menu');
 const Cards = require('../models/Cards');
 const Skill = require('../models/Skill');
+const nodemailer = require('nodemailer');
+const dotenv = require('dotenv').config({path:''});
 
 class AppController {
 
@@ -21,20 +23,35 @@ class AppController {
     });
   }
 
+  email(req, res) {
 
-  /* portfolio(req, res, next) {
-    menu.getMenu().then(menu => {
-      cards.getCards().then(cards => {
-        skill.getSkills().then(skill => {
-          res.render('pages/index.ejs', {
-            menu: menu,
-            cards: cards,
-            skill: skill
-          });
-        });
-      });
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.USERG,
+        pass: process.env.PASSG
+      }
     });
-  } */
+
+    const mailOptions = {
+      from: req.body.email,
+      to: process.env.USERG,
+      subject: req.body.subjet,
+      text: req.body.message,
+    }
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      error ? console.log(error) : console.log(info, 'message bien envoyer');
+    });
+
+    res.redirect('/');
+  }
 }
+
+
+
+
 
 module.exports = new AppController()
