@@ -6,7 +6,7 @@ class Db {
   getPool(prod = true) {
     if (prod == true) {
       console.log('PASSE en prod');
-      const pool = this.mysql.createPool({
+      const pool = this.mysql.createConnection({
         connectionLimit: 10,
         host: process.env.HOSTP,
         user: process.env.USERNAMEP,
