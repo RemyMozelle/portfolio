@@ -5,31 +5,37 @@ class Cards {
 
   getCards() {
     return new Promise((resolve, reject) => {
-      this.db.getPool().query('SELECT * FROM cards', (error, results, fields) => {
-        error ? reject(error) : resolve(results)
+      this.db.getPool().getConnection((err, connection) => {
+        connection.query('SELECT * FROM cards', (error, results, fields) => {
+          connection.release()
+          error ? reject(error) : resolve(results)
+        });
       });
     });
   }
 
-  getTechnologies(){
+  getTechnologies() {
     return new Promise((resolve, reject) => {
-      this.db.getPool().query(`
-      SELECT 
-        c.name,
-        t.nameTechno
-      FROM 
-        cards_has_technologies AS ct  
-      INNER JOIN 
-        cards AS c
-      ON
-        ct.cards_id = c.id
-      INNER JOIN
-        technologies AS t
-      ON
-        ct.technologies_id = t.id
-      `, (error, results, fields) => {
-        error ? reject(error) : resolve(results)
-      });
+      this.db.getPool().getConnection((err, connection) => {
+        connection.query(`
+        SELECT 
+          c.name,
+          t.nameTechno
+        FROM 
+          cards_has_technologies AS ct  
+        INNER JOIN 
+          cards AS c
+        ON
+          ct.cards_id = c.id
+        INNER JOIN
+          technologies AS t
+        ON
+          ct.technologies_id = t.id
+        `, (error, results, fields) => {
+            connection.release();
+            error ? reject(error) : resolve(results)
+          });
+      })
     });
   }
 }
