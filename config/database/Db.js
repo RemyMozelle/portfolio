@@ -4,7 +4,7 @@ class Db {
     this.mysql = require('mysql');
   }
 
-  getPool(prod = false) {
+  getPool(prod = true) {
     if (prod == true) {
       console.log('PASSE en prod');
       const pool = this.mysql.createPool({
