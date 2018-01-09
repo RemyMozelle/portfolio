@@ -2,22 +2,19 @@ const Menu = require('../models/Menu');
 const Cards = require('../models/Cards');
 const Skill = require('../models/Skill');
 const nodemailer = require('nodemailer');
-const dotenv = require('dotenv').config({path:''});
+const dotenv = require('dotenv').config({ path: '' });
 
 class AppController {
 
   portfolio(req, res, next) {
     Menu.getMenu().then(menu => {
       Cards.getCards().then(cards => {
-        Cards.getTechnologies().then(techno =>{
-          Skill.getSkills().then(skill => {
-            res.render('pages/index.ejs', {
-              menu: menu,
-              cards: cards,
-              techno: techno,
-              skill: skill,
-            });
-        })
+        Skill.getSkills().then(skill => {
+          res.render('pages/index.ejs', {
+            menu: menu,
+            cards: cards,
+            skill: skill,
+          });
         })
       });
     });
@@ -49,7 +46,7 @@ class AppController {
     res.redirect('/');
   }
 
-  getCv(req, res){
+  getCv(req, res) {
 
     const options = {
       root: './cv',

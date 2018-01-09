@@ -1,13 +1,12 @@
 const dotenv = require('dotenv').config()
-
 class Db {
   constructor() {
     this.mysql = require('mysql');
   }
 
   getPool(prod = true) {
-
     if (prod == true) {
+      console.log('PASSE en prod');
       const pool = this.mysql.createPool({
         connectionLimit: 10,
         host: process.env.HOST,
@@ -18,6 +17,7 @@ class Db {
 
       return pool
     } else {
+      console.log('passe en dev');
       const pool = this.mysql.createPool({
         connectionLimit: 10,
         host: process.env.HOSTDEV,
