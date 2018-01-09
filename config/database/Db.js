@@ -3,7 +3,6 @@ class Db {
   constructor() {
     this.mysql = require('mysql');
   }
-
   getPool(prod = true) {
     if (prod == true) {
       console.log('PASSE en prod');
