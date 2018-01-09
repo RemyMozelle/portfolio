@@ -13,7 +13,7 @@ class Db {
         user: process.env.USERNAMEP,
         password: process.env.PASSWORDP,
         database: process.env.DATABASEP,
-        port: 3306
+        port: '3306'
       });
 
       return pool
