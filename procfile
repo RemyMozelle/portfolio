@@ -1,1 +1,1 @@
-web: concurrently \"node app.js\" \"webpack --config webpack.prod.js\"
+web: node app.js
