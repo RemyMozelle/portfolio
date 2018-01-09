@@ -8,8 +8,8 @@ class Cards {
       this.db.getPool().getConnection((err, connection) => {
         if(err) throw err;
         connection.query('SELECT * FROM cards', (error, results, fields) => {
-          connection.release()
           error ? reject(error) : resolve(results)
+          connection.release()
         });
       });
     });
@@ -34,8 +34,8 @@ class Cards {
         ON
           ct.technologies_id = t.id
         `, (error, results, fields) => {
-            connection.release();
-            error ? reject(error) : resolve(results)
+          error ? reject(error) : resolve(results)
+          connection.release();
           });
       })
     });
