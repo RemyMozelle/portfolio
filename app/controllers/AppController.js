@@ -14,10 +14,10 @@ class AppController {
             menu: menu,
             cards: cards,
             skill: skill,
-          });
-        })
-      });
-    });
+          })
+        }).catch(err => console.log(err, 'getSkill'));
+      }).catch(err => console.log(err, 'getCards'));
+    }).catch(err => console.log(err, 'getMenu'));
   }
 
   email(req, res) {
