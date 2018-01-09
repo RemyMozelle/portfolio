@@ -6,6 +6,7 @@ class Cards {
   getCards() {
     return new Promise((resolve, reject) => {
       this.db.getPool().getConnection((err, connection) => {
+        if(err) throw err;
         connection.query('SELECT * FROM cards', (error, results, fields) => {
           connection.release()
           error ? reject(error) : resolve(results)
@@ -17,6 +18,7 @@ class Cards {
   getTechnologies() {
     return new Promise((resolve, reject) => {
       this.db.getPool().getConnection((err, connection) => {
+        if(err) throw err;
         connection.query(`
         SELECT 
           c.name,
