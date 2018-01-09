@@ -11,8 +11,7 @@ class Db {
         host: process.env.HOSTP,
         user: process.env.USERNAMEP,
         password: process.env.PASSWORDP,
-        database: process.env.DATABASEP,
-        port: '3306'
+        database: process.env.DATABASEP
       });
 
       return pool
