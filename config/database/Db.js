@@ -9,11 +9,11 @@ class Db {
       console.log('PASSE en prod');
       const pool = this.mysql.createPool({
         connectionLimit: 10,
-        host: process.env.HOST,
-        user: process.env.USERNAME,
-        password: process.env.PASSWORD,
-        database: process.env.DATABASE,
-        port: process.env.PORT
+        host: process.env.HOSTP,
+        user: process.env.USERNAMEP,
+        password: process.env.PASSWORDP,
+        database: process.env.DATABASEP,
+        port: 3306
       });
 
       return pool
