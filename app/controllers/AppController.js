@@ -2,7 +2,7 @@ const Menu = require('../models/Menu');
 const Cards = require('../models/Cards');
 const Skill = require('../models/Skill');
 const nodemailer = require('nodemailer');
-const dotenv = require('dotenv').config({ path: '' });
+const dotenv = require('dotenv').config();
 
 class AppController {
 
