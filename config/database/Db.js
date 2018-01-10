@@ -3,16 +3,15 @@ class Db {
   constructor() {
     this.mysql = require('mysql');
   }
-  getPool(prod = false) {
+  getPool(prod = true) {
     if (prod == true) {
       console.log('PASSE en prod');
       const pool = this.mysql.createPool({
         connectionLimit: 10,
-        host: 'eu-cdbr-west-01.cleardb.com',
-        user: 'b4141da59854d8',
-        password: '2aa6c949',
-        database: 'heroku_7f0570fe9eed28b',
-        port: 3306
+        host: process.env.HOSTP,
+        user: process.env.USERNAMEP,
+        password: process.env.PASSWORDP,
+        database: process.env.DATABASEP,
       });
 
       return pool
