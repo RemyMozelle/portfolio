@@ -13,7 +13,9 @@ route.post('/', appController.email); */
 
 route.get('/', (req, res) => {
   db.getPool().getConnection((err, connection) => {
+    if(err) throw err
     connection.query('SELECT * FROM test', (error, results) => {
+      if(error) throw error
       res.send(results)
     })
   })
