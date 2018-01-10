@@ -8,8 +8,6 @@ const cards = require('../../app/models/Cards');
 route.get('/cv/:cv', appController.getCv);
 route.post('/', appController.email); */
 
-route.get('/', (req, res) => {
-  res.render('pages/index.ejs');
-})
+route.get('/', appController.portfolio);
 
 module.exports = route;
