@@ -12,7 +12,7 @@ class Db {
         user: 'b4141da59854d8',
         password: '2aa6c949',
         database: 'heroku_7f0570fe9eed28b',
-        port: '3306'
+        port: 3306
       });
 
       return pool
