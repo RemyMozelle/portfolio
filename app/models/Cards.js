@@ -15,7 +15,7 @@ class Cards {
     });
   }
 
-  getTechnologies() {
+  /* getTechnologies() {
     return new Promise((resolve, reject) => {
       this.db.getPool().getConnection((err, connection) => {
         if(err) throw err;
@@ -39,7 +39,7 @@ class Cards {
           });
       })
     });
-  }
+  }*/
 }
 
 module.exports = new Cards();
