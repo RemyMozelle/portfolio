@@ -7,9 +7,9 @@ class Cards {
     return new Promise((resolve, reject) => {
       this.db.getPool().getConnection((err, connection) => {
         if(err) throw err;
-        connection.query('SELECT * FROM cards', (error, results, fields) => {
-          error ? reject(error) : resolve(results)
+        connection.query('SELECT name, github, url, description, techno FROM cards', (error, results, fields) => {
           connection.release()
+          error ? reject(error) : resolve(results)
         });
       });
     });
