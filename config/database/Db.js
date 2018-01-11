@@ -5,10 +5,14 @@ class Db {
   }
 
   getPool(online = true) {
-    if(online == true) {
-      const pool = this.mysql.createPool(process.env.JAWSDB_URL);
-    }
 
+    if(online == true) {
+      console.log('passe online');
+      const pool = this.mysql.createPool(process.env.JAWSDB_URL);
+      return pool;
+    } 
+
+    console.log('passe dev');
     const pool = this.mysql.createPool({
       connectionLimit: 10,
       host: 'localhost',
