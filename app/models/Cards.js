@@ -5,12 +5,8 @@ class Cards {
 
   getCards() {
     return new Promise((resolve, reject) => {
-      this.db.getPool().getConnection((err, connection) => {
-        if(err) throw err;
-        connection.query('SELECT name, github, url, description, techno FROM cards', (error, results, fields) => {
-          connection.release()
-          error ? reject(error) : resolve(results)
-        });
+      this.db.getPool().query('SELECT name, github, url, description, techno FROM cards', (error, results, fields) => {
+        error ? reject(error) : resolve(results)
       });
     });
   }
@@ -36,7 +32,7 @@ class Cards {
         `, (error, results, fields) => {
           error ? reject(error) : resolve(results)
           connection.release();
-          });
+        });
       })
     });
   }*/

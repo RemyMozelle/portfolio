@@ -5,7 +5,7 @@ class CardsController {
   showCards(req, res, next){
     Cards.getCards().then(cards => {
       res.send(cards);
-    })
+    });
   }
 }
 
