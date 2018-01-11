@@ -9,6 +9,7 @@ class Menu {
         error ? reject(error) : resolve(result)
       });
     });
+    
   }
 }
 

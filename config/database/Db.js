@@ -4,7 +4,7 @@ class Db {
     this.mysql = require('mysql');
   }
 
-  getPool(online = true) {
+  getPool(online = false) {
 
     if(online == true) {
       console.log('passe online');
