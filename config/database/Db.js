@@ -10,7 +10,7 @@ class Db {
     }
 
     const pool = this.mysql.createPool({
-      connectionLimit: 100,
+      connectionLimit: 10,
       host: 'localhost',
       database: 'portfolio',
       user: 'root',
