@@ -9,15 +9,18 @@ class AppController {
   portfolio(req, res, next) {
     Menu.getMenu().then(menu => {
       Cards.getCards().then(cards => {
-        Skill.getSkills().then(skill => {
-          res.render('pages/index.ejs', {
-            menu: menu,
-            cards: cards,
-            skill: skill
-          })
-        }).catch(err => console.log(err, 'getSkill'));
-      }).catch(err => console.log(err, 'getCards'));
-    }).catch(err => console.log(err, 'getMenu'));
+        Cards.getTechno().then(techno => {
+          Skill.getSkills().then(skill => {
+            res.render('pages/index.ejs', {
+              menu: menu,
+              cards: cards,
+              techno: techno,
+              skill: skill
+            })
+          }).catch(err => console.error(err, 'getSkill'));
+          }).catch(err => console.error(err, 'getTechno'));
+      }).catch(err => console.error(err, 'getCards'));
+    }).catch(err => console.error(err, 'getMenu'));
   }
 
   email(req, res) {
