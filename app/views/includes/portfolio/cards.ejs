@@ -18,6 +18,12 @@
           <%= cards.description %>
         </p>
         <p style="font-size:1em;">
+          <% console.log(cards); %>
+          <% const technologies = cards.technologies.split(','); %>
+          <% const color = cards.color.split(','); %>
+          <% for (let i = 0; i < technologies.length; i++) { %>
+            <span class="label label-default b<%=color[i]%>"><%= technologies[i] %></span>
+          <% } %>
         </p>
       </div>
     </div>
