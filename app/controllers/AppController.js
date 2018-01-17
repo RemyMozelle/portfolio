@@ -8,17 +8,14 @@ class AppController {
 
   portfolio(req, res, next) {
     Menu.getMenu().then(menu => {
-      Cards.getCards().then(cards => {
-        Cards.getTechno().then(techno => {
-          Skill.getSkills().then(skill => {
-            res.render('pages/index.ejs', {
-              menu: menu,
-              cards: cards,
-              techno: techno,
-              skill: skill
-            })
-          }).catch(err => console.error(err, 'getSkill'));
-          }).catch(err => console.error(err, 'getTechno'));
+      Cards.getCardsAsTechnologies().then(cards => {
+        Skill.getSkills().then(skill => {
+          res.render('pages/index.ejs', {
+            menu: menu,
+            cards: cards,
+            skill: skill
+          })
+        }).catch(err => console.error(err, 'getSkill'));
       }).catch(err => console.error(err, 'getCards'));
     }).catch(err => console.error(err, 'getMenu'));
   }
@@ -43,7 +40,7 @@ class AppController {
     }
 
     transporter.sendMail(mailOptions, (error, info) => {
-      error ? console.log(error) : console.log(info, 'message bien envoyer');
+      error ? console.error(error) : console.log(info, 'message bien envoyer');
     });
 
     res.redirect('/');
