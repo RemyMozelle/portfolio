@@ -21,7 +21,7 @@ window.addEventListener('scroll', (e) => {
 
   console.log(hauteur);
 
-  if (window.scrollY >= 600) {
+  if (window.scrollY >= 100) {
     navbar.classList.add('navbar-fixed-top');
     navbar.setAttribute('style', 'background-color: rgba(40, 44, 52, 1');
     minimoi.setAttribute('style', 'visibility: visible');
