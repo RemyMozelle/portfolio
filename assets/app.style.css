@@ -22,10 +22,14 @@ header, .savoir_faire, footer{ background-color: #282c34; padding-bottom: 20px; 
 .bvert{background-color: #a6e22e; }
 .brose{background-color: #f92672; }
 .bbleu{background-color: #48cdef; }
+<<<<<<< HEAD
 .borange{background-color:#fd9020; }
 .bviolet{background-color: #563b7e; }
 .bjaune{background-color: #f7df1e; }
 .bgris{background-color: #555555; }
+=======
+.borange{background-color:#fd9020;}
+>>>>>>> 472051dab37770351d9d95c96c48a60714489d45
 /** MENU **/
 .navbar-default{ background-color: transparent; border: none; }
 body header .navbar-default .navbar-nav > li > a:hover { color: #f92672; }
