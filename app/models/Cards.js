@@ -6,7 +6,7 @@ class Cards {
   getCardsAsTechnologies() {
     return new Promise((resolve, reject) => {
       this.db.getPool().query(`
-        SELECT c.name, c.url,
+        SELECT c.id, c.name, c.url, c.description,
         GROUP_CONCAT(t.nameTechno) AS technologies,
         GROUP_CONCAT(t.color) AS color
         FROM cards AS c
@@ -14,7 +14,8 @@ class Cards {
         ON c.id = ct.cards_id
         INNER JOIN technologies AS t
         ON ct.technologies_id = t.id
-        GROUP BY c.name, c.url
+        GROUP BY c.id, c.name, c.url, c.description
+        ORDER BY c.id
         
       `, (err, result) => {
         err ? reject(err) : resolve(result);
