@@ -16,7 +16,6 @@ class Cards {
         ON ct.technologies_id = t.id
         GROUP BY c.id, c.name, c.url, c.description
         ORDER BY c.id
-        
       `, (err, result) => {
         err ? reject(err) : resolve(result);
       })
