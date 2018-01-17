@@ -23,6 +23,9 @@ header, .savoir_faire, footer{ background-color: #282c34; padding-bottom: 20px; 
 .brose{background-color: #f92672; }
 .bbleu{background-color: #48cdef; }
 .borange{background-color:#fd9020;}
+.bviolet{background-color: #563b7e; }
+.bgris{background-color: #555555}
+.bjaune{background-color: #f7df1e}
 /** MENU **/
 .navbar-default{ background-color: transparent; border: none; }
 body header .navbar-default .navbar-nav > li > a:hover { color: #f92672; }
