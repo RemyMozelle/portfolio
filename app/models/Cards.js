@@ -15,7 +15,7 @@ class Cards {
         INNER JOIN technologies AS t
         ON ct.technologies_id = t.id
         GROUP BY c.id, c.name, c.url, c.github, c.description
-        ORDER BY c.id, c.name, c.url, c.github, c.description
+        ORDER BY c.id
       `, (err, result) => {
         err ? reject(err) : resolve(result);
       })

@@ -8,15 +8,27 @@ let minimoi = document.querySelector('#minimoi');
 
 console.log(minimoi);
 window.addEventListener('scroll', (e) => {
+  
+  let hauteur = 0
+  if(window.scrollY <= hauteur) {
+    hauteur ++
+  }if(window.scrollY <= hauteur) {
+    hauteur ++
+  }
+  if(window.scrollY <= hauteur) {
+    hauteur ++
+  }
 
-  if (window.scrollY >= 200) {
-    //navbar.classList.add('navbar-fixed-top');
+  console.log(hauteur);
+
+  if (window.scrollY >= 600) {
+    navbar.classList.add('navbar-fixed-top');
     navbar.setAttribute('style', 'background-color: rgba(40, 44, 52, 1');
-    minimoi.setAttribute('style', 'hidden');
+    minimoi.setAttribute('style', 'visibility: visible');
   }
   else {
     navbar.classList.remove('navbar-fixed-top');
-    minimoi.setAttribute('style', 'visible');
+    minimoi.setAttribute('style', 'visibility: hidden');
   }
 
 })
